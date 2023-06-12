@@ -1,5 +1,5 @@
 // config/router.config.jsx
-import React from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 
 /* 一级页面 */
 import Dashboard from "@/views/dashboard/Dashboard"
@@ -17,6 +17,9 @@ import Video from "@/views/Library/Video";
 /* 模面二级页面 */
 import Company from '@/views/Interview/Company';
 import Album from '@/views/Interview/Album';
+// import AlbumDetail from '@/views/Interview/AlbumDetail';
+// const AlbumDetail = lazy(() => import('@/views/Interview/AlbumDetail'))
+
 import Option from '@/views/Interview/Option';
 import Keyword from '@/views/Interview/Keyword';
 
@@ -26,6 +29,8 @@ import Collection from '@/views/Mine/Collection';
 import InterHistory from '@/views/Mine/InterHistory';
 import Order from '@/views/Mine/Order';
 import Danger from '@/views/Mine/Danger';
+
+const lazyLoad = src => <Suspense fallback={<>...</>}>{React.createElement(lazy(src))}</Suspense>;
 
 const routes = [
 
@@ -79,6 +84,11 @@ const routes = [
             {
                 path: 'album',
                 element: <Album />
+            },
+            {
+                path: 'album/:aid',
+                // element: <AlbumDetail />
+                element: lazyLoad(() => import('../src/pages/Home'))
             },
             {
                 path: 'option',
