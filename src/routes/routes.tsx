@@ -1,12 +1,14 @@
 // config/router.config.jsx
 import React, { Component, Suspense, lazy } from 'react';
 
+import BaseLayout from '@/views/BaseLayout';
+
 /* 一级页面 */
-import Dashboard from "@/views/dashboard/Dashboard"
+import Dashboard from "@/views/Dashboard/Dashboard"
 import Interview from "@/views/Interview"
 import Library from "@/views/Library"
 import Mine from "@/views/Mine"
-import NotFound from "@/views/notfound/NotFound";
+import NotFound from "@/views/NotFound/NotFound";
 
 /* 题库二级页面 */
 import Module from "@/views/Library/Module";
@@ -30,111 +32,117 @@ import InterHistory from '@/views/Mine/InterHistory';
 import Order from '@/views/Mine/Order';
 import Danger from '@/views/Mine/Danger';
 
+
 const lazyLoad = src => <Suspense fallback={<>...</>}>{React.createElement(lazy(src))}</Suspense>;
 
 const routes = [
-
-    /* 数据看板 */
     {
-        path: 'dashboard',
-        element: <Dashboard />
-    },
-
-    /* 题库 */
-    {
-        path: 'library',
-        element: <Library />,
+        path: '/',
+        element: <BaseLayout />,
         children: [
+
+            /* 数据看板 */
             {
-                index: true,
-                element: <Module />
+                path: 'dashboard',
+                element: <Dashboard />
             },
+
+            /* 题库 */
             {
-                path: 'module',
-                element: <Module />
+                path: 'library',
+                element: <Library />,
+                children: [
+                    {
+                        index: true,
+                        element: <Module />
+                    },
+                    {
+                        path: 'module',
+                        element: <Module />
+                    },
+                    {
+                        path: 'question',
+                        element: <Question />
+                    },
+                    {
+                        path: 'blog',
+                        element: <Blog />
+                    },
+                    {
+                        path: 'video',
+                        element: <Video />
+                    }
+                ]
             },
+
+            /* 模面 */
             {
-                path: 'question',
-                element: <Question />
+                path: 'interview',
+                element: <Interview />,
+                children: [
+                    {
+                        index: true,
+                        element: <Company />
+                    },
+                    {
+                        path: 'company',
+                        element: <Company />
+                    },
+                    {
+                        path: 'album',
+                        element: <Album />
+                    },
+                    {
+                        path: 'album/:aid',
+                        // element: <AlbumDetail />
+                        element: lazyLoad(() => import('@/views/Interview/AlbumDetail'))
+                    },
+                    {
+                        path: 'option',
+                        element: <Option />
+                    },
+                    {
+                        path: 'keyword',
+                        element: <Keyword />
+                    }
+                ]
             },
+
+            /* 我的 */
             {
-                path: 'blog',
-                element: <Blog />
+                path: 'mine',
+                element: <Mine />,
+                children: [
+                    {
+                        path: 'user',
+                        element: <User />
+                    },
+                    {
+                        path: 'collection',
+                        element: <Collection />
+                    },
+                    {
+                        path: 'interHistory',
+                        element: <InterHistory />
+                    },
+                    {
+                        path: 'order',
+                        element: <Order />
+                    },
+                    {
+                        path: 'danger',
+                        element: <Danger />
+                    }
+                ]
             },
-            {
-                path: 'video',
-                element: <Video />
-            }
         ]
     },
-
-    /* 模面 */
-    {
-        path: 'interview',
-        element: <Interview />,
-        children: [
-            {
-                index: true,
-                element: <Company />
-            },
-            {
-                path: 'company',
-                element: <Company />
-            },
-            {
-                path: 'album',
-                element: <Album />
-            },
-            {
-                path: 'album/:aid',
-                // element: <AlbumDetail />
-                element: lazyLoad(() => import('../src/pages/Home'))
-            },
-            {
-                path: 'option',
-                element: <Option />
-            },
-            {
-                path: 'keyword',
-                element: <Keyword />
-            }
-        ]
-    },
-
-    /* 我的 */
-    {
-        path: 'mine',
-        element: <Mine />,
-        children: [
-            {
-                path: 'user',
-                element: <User />
-            },
-            {
-                path: 'collection',
-                element: <Collection />
-            },
-            {
-                path: 'interHistory',
-                element: <InterHistory />
-            },
-            {
-                path: 'order',
-                element: <Order />
-            },
-            {
-                path: 'danger',
-                element: <Danger />
-            }
-        ]
-    },
-
+    
     /* 404 */
     {
         path: '*',
         element: <NotFound />
     }
-
 ];
 
 export default routes;

@@ -4,7 +4,9 @@ import routes from "@/routes/routes";
 
 function App() {
   return (
-    <>{useRoutes(routes)}</>
+    <>
+      {useRoutes(routes)}
+    </>
   );
 }
 
