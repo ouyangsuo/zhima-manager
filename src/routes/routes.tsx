@@ -8,7 +8,7 @@ import Dashboard from "@/views/Dashboard/Dashboard"
 import Interview from "@/views/Interview"
 import Library from "@/views/Library"
 import Mine from "@/views/Mine"
-import NotFound from "@/views/NotFound/NotFound";
+import NotFound from "@/views/Notfound/NotFound";
 
 /* 题库二级页面 */
 import Module from "@/views/Library/Module";
@@ -31,6 +31,8 @@ import Collection from '@/views/Mine/Collection';
 import InterHistory from '@/views/Mine/InterHistory';
 import Order from '@/views/Mine/Order';
 import Danger from '@/views/Mine/Danger';
+import History from '@/views/Mine/History';
+
 
 
 const lazyLoad = src => <Suspense fallback={<>...</>}>{React.createElement(lazy(src))}</Suspense>;
@@ -130,6 +132,10 @@ const routes = [
                         element: <Order />
                     },
                     {
+                        path: 'history',
+                        element: <History />
+                    },
+                    {
                         path: 'danger',
                         element: <Danger />
                     }
@@ -137,7 +143,7 @@ const routes = [
             },
         ]
     },
-    
+
     /* 404 */
     {
         path: '*',
