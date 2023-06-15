@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Space, Table, Tag, Pagination, Modal } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 
@@ -66,7 +66,15 @@ const columns: ColumnsType<DataType> = [
     render: (_, record) => (
       <Space size="middle">
         <a>详情</a>
-        <a>编辑</a>
+
+        {/* 编辑信息 */}
+        <a onClick={e => {
+          console.log("edit", record);
+          comSetOpen(true);
+          comSetRecord(record)
+        }}>编辑</a>
+
+        {/* 删除 */}
         <a onClick={e => {
           console.log("delete", record);
 
@@ -96,8 +104,79 @@ const _data: DataType[] = new Array(25).fill(null).map(
 // console.log(data);
 
 const pageSize = 5
-
 let comSetData;
+let comSetOpen;
+let comSetRecord;
+
+
+/* 编辑专辑信息 */
+import { Button, Form, Input, Radio } from 'antd';
+interface Values {
+  title: string;
+  description: string;
+  modifier: string;
+}
+interface CollectionCreateFormProps {
+  open: boolean;
+  initialValues: any;
+  onCreate: (values: Values) => void;
+  onCancel: () => void;
+}
+
+const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
+  open,
+  onCreate,
+  onCancel,
+  initialValues
+}) => {
+  const [form] = Form.useForm();
+
+  return (
+    <Modal
+      open={open}
+      title="专辑编辑"
+      okText="Create"
+      cancelText="Cancel"
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log('Validate Failed:', info);
+          });
+      }}
+    >
+      <Form
+        form={form}
+        layout="vertical"
+        name="form_in_modal"
+        initialValues={initialValues}
+      >
+
+        <Form.Item
+          name="name"
+          label="Name"
+          rules={[{ required: true, message: 'Please input the title of collection!' }]}
+        >
+          <Input />
+        </Form.Item>
+
+        {/* <Form.Item name="modifier" className="collection-create-form_last-form-item">
+          <Radio.Group>
+            <Radio value="public">Public</Radio>
+            <Radio value="private">Private</Radio>
+          </Radio.Group>
+        </Form.Item> */}
+
+      </Form>
+    </Modal>
+  );
+};
+
 const App: React.FC = () => {
   // const [bottom, setBottom] = useState<TablePaginationPosition>('bottomRight');
   const [data, setData] = useState<DataType[]>([])
@@ -116,7 +195,28 @@ const App: React.FC = () => {
   useEffect(() => {
     console.log("set new page data");
     setPageData(data.slice(pageSize * (page - 1), pageSize * page))
-  }, [data.length])
+  }, [data])
+
+
+  /* 编辑相关 */
+  const [open, setOpen] = useState(false);
+  const [record, setRecord] = useState<DataType>(data[0])
+  const onCreate = (values: any) => {
+    console.log('Received values of form: ', values);
+    setOpen(false);
+    // setRecord({...record,...values})
+
+    const index = data.findIndex(item => item.id === record.id)
+    data[index] = { ...record, ...values }
+    setData([...data])
+    console.log(index, record, data[index]);
+  };
+
+  useEffect(() => {
+    comSetOpen = setOpen
+    comSetRecord = setRecord
+  }, [])
+
 
   return (
     <div style={{ height: "100%", display: 'flex', flexDirection: 'column', justifyContent: "space-between" }}>
@@ -124,7 +224,17 @@ const App: React.FC = () => {
       <Pagination style={{ alignSelf: "flex-end" }} onChange={(page, pageSize) => {
         console.log(page, pageSize);
         setPage(page)
-      }} total={data.length} />
+      }} total={data.length} pageSize={pageSize} />
+
+      <CollectionCreateForm
+        open={open}
+        initialValues={record}
+        onCreate={onCreate}
+        onCancel={() => {
+          setOpen(false);
+        }}
+      />
+
     </div>
   );
 };
