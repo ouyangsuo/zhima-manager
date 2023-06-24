@@ -33,8 +33,6 @@ import Order from '@/views/Mine/Order';
 import Danger from '@/views/Mine/Danger';
 import History from '@/views/Mine/History';
 
-
-
 const lazyLoad = src => <Suspense fallback={<>...</>}>{React.createElement(lazy(src))}</Suspense>;
 
 const routes = [
