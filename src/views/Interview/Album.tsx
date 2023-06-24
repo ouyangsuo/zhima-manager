@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Space, Table, Tag, Pagination, Modal } from "antd";
+import { Space, Table, Pagination, Modal } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
 import { ExclamationCircleFilled } from "@ant-design/icons";
@@ -74,7 +74,7 @@ const columns: ColumnsType<DataType> = [
     render: (_, record) => (
       <Space size="middle">
         <a
-          onClick={(e) => {
+          onClick={(_e) => {
             comNavigateTo(`/interview/album/${record.id}`);
           }}
         >
@@ -83,7 +83,7 @@ const columns: ColumnsType<DataType> = [
 
         {/* 编辑信息 */}
         <a
-          onClick={(e) => {
+          onClick={(_e) => {
             console.log("edit", record);
             comSetOpen(true);
             comSetRecord(record);
@@ -94,7 +94,7 @@ const columns: ColumnsType<DataType> = [
 
         {/* 删除 */}
         <a
-          onClick={(e) => {
+          onClick={(_e) => {
             console.log("delete", record);
 
             // 弹窗
@@ -113,7 +113,7 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
-const _data: DataType[] = new Array(25).fill(null).map((item, index) => ({
+const _data: DataType[] = new Array(25).fill(null).map((_item, index) => ({
   id: index + 1,
   name: "滴滴八股文精选",
   img: "https://lekuzhima.club/imgs/dachang-bg.jpg",
@@ -129,10 +129,8 @@ let comSetRecord;
 let comNavigateTo;
 
 /* 编辑专辑信息 */
-import { Button, Form, Input, Radio } from "antd";
+import { Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
-import { getAlbums } from "@/api/album";
-import { log } from "console";
 interface Values {
   title: string;
   description: string;
