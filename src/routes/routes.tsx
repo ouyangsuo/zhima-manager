@@ -1,5 +1,5 @@
 // config/router.config.jsx
-import React, { Component, Suspense, lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 
 import BaseLayout from '@/views/BaseLayout';
 

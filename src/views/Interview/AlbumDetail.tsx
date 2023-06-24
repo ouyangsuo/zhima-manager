@@ -3,9 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getAlbumDetail } from '@/api/album';
 
 
-import { DownOutlined } from '@ant-design/icons';
 import type { TableColumnsType } from 'antd';
-import { Badge, Dropdown, Space, Table } from 'antd';
+import { Table } from 'antd';
 
 interface DataType {
     key: React.Key;

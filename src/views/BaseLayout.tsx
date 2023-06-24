@@ -139,7 +139,7 @@ const BaseLayout: React.FC = () => {
                         style={{ height: '100%', borderRight: 0 }}
                         items={items2}
 
-                        onClick={({ item, key, keyPath, domEvent }) => {
+                        onClick={({ key, keyPath }) => {
                             // console.log("item=", item);
                             // console.log("domEvent=", domEvent);
                             console.log("key=", key);
