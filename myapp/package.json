@@ -22,12 +22,14 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "sass": "^1.63.3"
+    "sass": "^1.63.3",
+    "webpack-bundle-analyzer": "^4.9.0",
+    "webpackbar": "^5.0.2"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
+    "dev": "cross-env REACT_APP_ENV=development craco start",
+    "build": "cross-env REACT_APP_ENV=production craco build",
+    "test": "cross-env REACT_APP_ENV=test craco build"
   },
   "eslintConfig": {
     "extends": [

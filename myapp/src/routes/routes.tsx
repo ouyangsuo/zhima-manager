@@ -2,42 +2,39 @@
 import React, { Suspense, lazy } from 'react';
 
 
-
-
-
 /* ==================== */
 
-import BaseLayout from '../views/BaseLayout';
+import BaseLayout from '@/views/BaseLayout';
 
 /* 一级页面 */
-import Dashboard from "../views/Dashboard/Dashboard"
-import Interview from "../views/Interview"
-import Library from "../views/Library"
-import Mine from "../views/Mine"
-import NotFound from "../views/Notfound/NotFound";
+import Dashboard from "@/views/Dashboard/Dashboard"
+import Interview from "@/views/Interview"
+import Library from "@/views/Library"
+import Mine from "@/views/Mine"
+import NotFound from "@/views/Notfound/NotFound";
 
 /* 题库二级页面 */
-import Module from "../views/Library/Module";
-import Question from "../views/Library/Question";
-import Blog from "../views/Library/Blog";
-import Video from "../views/Library/Video";
+import Module from "@/views/Library/Module";
+import Question from "@/views/Library/Question";
+import Blog from "@/views/Library/Blog";
+import Video from "@/views/Library/Video";
 
 /* 模面二级页面 */
-import Company from '../views/Interview/Company';
-import Album from '../views/Interview/Album';
-// import AlbumDetail from '../views/Interview/AlbumDetail';
-// const AlbumDetail = lazy(() => import('../views/Interview/AlbumDetail'))
+import Company from '@/views/Interview/Company';
+import Album from '@/views/Interview/Album';
+// import AlbumDetail from '@/views/Interview/AlbumDetail';
+// const AlbumDetail = lazy(() => import('@/views/Interview/AlbumDetail'))
 
-import Option from '../views/Interview/Option';
-import Keyword from '../views/Interview/Keyword';
+import Option from '@/views/Interview/Option';
+import Keyword from '@/views/Interview/Keyword';
 
 /* 我的二级页面 */
-import User from '../views/Mine/User';
-import Collection from '../views/Mine/Collection';
-import InterHistory from '../views/Mine/InterHistory';
-import Order from '../views/Mine/Order';
-import Danger from '../views/Mine/Danger';
-import History from '../views/Mine/History';
+import User from '@/views/Mine/User';
+import Collection from '@/views/Mine/Collection';
+import InterHistory from '@/views/Mine/InterHistory';
+import Order from '@/views/Mine/Order';
+import Danger from '@/views/Mine/Danger';
+import History from '@/views/Mine/History';
 
 /* ==================== */
 
@@ -107,7 +104,7 @@ const routes = [
                     {
                         path: 'album/:aid',
                         // element: <AlbumDetail />
-                        element: lazyLoad(() => import('../views/Interview/AlbumDetail'))
+                        element: lazyLoad(() => import('@/views/Interview/AlbumDetail'))
                     },
                     {
                         path: 'option',
