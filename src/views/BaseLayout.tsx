@@ -116,7 +116,7 @@ const BaseLayout: React.FC = () => {
 
                 <div className={style.userInfo}>
                     <img className={style.avatar} src='https://lekuzhima.club/imgs/avatar.jpeg' />
-                    <Button size="small" className={style.btnLogout} type="primary" ghost>登出</Button>
+                    <Button size="small" className={style.btnLogout} type="primary" ghost>登出2</Button>
                 </div>
             </Header>
 
