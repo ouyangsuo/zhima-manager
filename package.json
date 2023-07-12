@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "gpush":"git add . && git commit -m temp && git push -u github master"
+    "gpush:master":"git add . && git commit -m temp && git push -u github master"
   },
   "dependencies": {
     "react": "^18.2.0",
