@@ -1,6 +1,6 @@
 # 设置基础镜像
 # FROM node:14-alpine
-FROM nginx
+FROM bitnami/nginx
 
 # 给容器起个名字
 LABEL name="zhima-manager"
