@@ -26,7 +26,7 @@ COPY ./dist /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d
 
 # 向宿主机暴露端口
-EXPOSE 8001
+EXPOSE 80
 
 # 构建前端项目
 # RUN chown -R node /usr/src/app
