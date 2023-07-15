@@ -43,12 +43,7 @@ module.exports = {
     ],
 
     alias: {
-      //   layouts: path.resolve(__dirname, "./src/app/layouts"),
-      //   containers: path.resolve(__dirname, "./src/app/containers"),
-      //   components: path.resolve(__dirname, "./src/app/components"),
-      //   utils: path.resolve(__dirname, "./src/utils"),
-      //   routers: path.resolve(__dirname, "./src/routers"),
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "src"),
       "antd/es": path.resolve(__dirname, "node_modules/antd/es"),
     },
 
