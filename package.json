@@ -32,7 +32,7 @@
   },
   "scripts": {
     "dev": "cross-env REACT_APP_ENV=development craco start",
-    "build": "cross-env REACT_APP_ENV=production craco build",
+    "build": "cross-env REACT_APP_ENV=production craco build --no-warnings &",
     "test": "cross-env REACT_APP_ENV=test craco build"
   },
   "eslintConfig": {
