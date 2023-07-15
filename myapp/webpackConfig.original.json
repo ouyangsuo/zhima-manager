@@ -3,32 +3,32 @@
         "browserslist"
     ],
     "stats": "errors-warnings",
-    "mode": "production",
-    "bail": true,
-    "devtool": "source-map",
-    "entry": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\src\\index.tsx",
+    "mode": "development",
+    "bail": false,
+    "devtool": "cheap-module-source-map",
+    "entry": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\src\\index.tsx",
     "output": {
-        "path": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\build",
-        "pathinfo": false,
-        "filename": "static/js/[name].[contenthash:8].js",
-        "chunkFilename": "static/js/[name].[contenthash:8].chunk.js",
+        "path": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\build",
+        "pathinfo": true,
+        "filename": "static/js/bundle.js",
+        "chunkFilename": "static/js/[name].chunk.js",
         "assetModuleFilename": "static/media/[name].[hash][ext]",
         "publicPath": "/"
     },
     "cache": {
         "type": "filesystem",
-        "version": "f7b8d6cd95b8eacbb6a831a6345d0464",
-        "cacheDirectory": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\.cache",
+        "version": "d1f1989cbbd0be6f6623582c8862b6b4",
+        "cacheDirectory": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\.cache",
         "store": "pack",
         "buildDependencies": {
             "defaultWebpack": [
                 "webpack/lib/"
             ],
             "config": [
-                "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\react-scripts\\config\\webpack.config.js"
+                "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\react-scripts\\config\\webpack.config.js"
             ],
             "tsconfig": [
-                "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\tsconfig.json"
+                "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\tsconfig.json"
             ]
         }
     },
@@ -36,7 +36,7 @@
         "level": "none"
     },
     "optimization": {
-        "minimize": true,
+        "minimize": false,
         "minimizer": [
             {
                 "options": {
@@ -82,7 +82,7 @@
     "resolve": {
         "modules": [
             "node_modules",
-            "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules"
+            "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules"
         ],
         "extensions": [
             ".web.mjs",
@@ -99,21 +99,21 @@
         ],
         "alias": {
             "react-native": "react-native-web",
-            "@": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\src",
-            "antd/es": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\antd\\es"
+            "@": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\src",
+            "antd/es": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\antd\\es"
         },
         "plugins": [
             {
                 "appSrcs": [
-                    "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\src"
+                    "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\src"
                 ],
                 "allowedFiles": {},
                 "allowedPaths": [
-                    "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\react-refresh",
-                    "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\@pmmmwh\\react-refresh-webpack-plugin\\lib",
-                    "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\babel-preset-react-app",
-                    "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\@babel\\runtime\\helpers\\esm",
-                    "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\@babel\\runtime\\regenerator"
+                    "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\react-refresh",
+                    "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\@pmmmwh\\react-refresh-webpack-plugin\\lib",
+                    "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\babel-preset-react-app",
+                    "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\@babel\\runtime\\helpers\\esm",
+                    "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\@babel\\runtime\\regenerator"
                 ]
             }
         ]
@@ -125,7 +125,7 @@
                 "enforce": "pre",
                 "exclude": {},
                 "test": {},
-                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\source-map-loader\\dist\\cjs.js"
+                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\source-map-loader\\dist\\cjs.js"
             },
             {
                 "oneOf": [
@@ -159,7 +159,7 @@
                         "test": {},
                         "use": [
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\@svgr\\webpack\\lib\\index.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\@svgr\\webpack\\lib\\index.js",
                                 "options": {
                                     "prettier": false,
                                     "svgo": false,
@@ -175,7 +175,7 @@
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\file-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\file-loader\\dist\\cjs.js",
                                 "options": {
                                     "name": "static/media/[name].[hash].[ext]"
                                 }
@@ -189,13 +189,13 @@
                     },
                     {
                         "test": {},
-                        "include": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\src",
-                        "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\babel-loader\\lib\\index.js",
+                        "include": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\src",
+                        "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\babel-loader\\lib\\index.js",
                         "options": {
-                            "customize": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\babel-preset-react-app\\webpack-overrides.js",
+                            "customize": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\babel-preset-react-app\\webpack-overrides.js",
                             "presets": [
                                 [
-                                    "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\babel-preset-react-app\\index.js",
+                                    "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\babel-preset-react-app\\index.js",
                                     {
                                         "runtime": "automatic"
                                     }
@@ -203,24 +203,26 @@
                             ],
                             "babelrc": false,
                             "configFile": false,
-                            "cacheIdentifier": "production:babel-plugin-named-asset-import@0.3.8:babel-preset-react-app@10.0.1:react-dev-utils@12.0.1:react-scripts@5.0.1",
-                            "plugins": [],
+                            "cacheIdentifier": "development:babel-plugin-named-asset-import@0.3.8:babel-preset-react-app@10.0.1:react-dev-utils@12.0.1:react-scripts@5.0.1",
+                            "plugins": [
+                                "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\react-refresh\\babel.js"
+                            ],
                             "cacheDirectory": true,
                             "cacheCompression": false,
-                            "compact": true
+                            "compact": false
                         }
                     },
                     {
                         "test": {},
                         "exclude": {},
-                        "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\babel-loader\\lib\\index.js",
+                        "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\babel-loader\\lib\\index.js",
                         "options": {
                             "babelrc": false,
                             "configFile": false,
                             "compact": false,
                             "presets": [
                                 [
-                                    "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\babel-preset-react-app\\dependencies.js",
+                                    "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\babel-preset-react-app\\dependencies.js",
                                     {
                                         "helpers": true
                                     }
@@ -228,7 +230,7 @@
                             ],
                             "cacheDirectory": true,
                             "cacheCompression": false,
-                            "cacheIdentifier": "production:babel-plugin-named-asset-import@0.3.8:babel-preset-react-app@10.0.1:react-dev-utils@12.0.1:react-scripts@5.0.1",
+                            "cacheIdentifier": "development:babel-plugin-named-asset-import@0.3.8:babel-preset-react-app@10.0.1:react-dev-utils@12.0.1:react-scripts@5.0.1",
                             "sourceMaps": true,
                             "inputSourceMap": true
                         }
@@ -237,12 +239,9 @@
                         "test": {},
                         "exclude": {},
                         "use": [
+                            "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\style-loader\\dist\\cjs.js",
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\mini-css-extract-plugin\\dist\\loader.js",
-                                "options": {}
-                            },
-                            {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\css-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\css-loader\\dist\\cjs.js",
                                 "options": {
                                     "importLoaders": 1,
                                     "sourceMap": true,
@@ -252,7 +251,7 @@
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\postcss-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\postcss-loader\\dist\\cjs.js",
                                 "options": {
                                     "postcssOptions": {
                                         "ident": "postcss",
@@ -280,12 +279,9 @@
                     {
                         "test": {},
                         "use": [
+                            "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\style-loader\\dist\\cjs.js",
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\mini-css-extract-plugin\\dist\\loader.js",
-                                "options": {}
-                            },
-                            {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\css-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\css-loader\\dist\\cjs.js",
                                 "options": {
                                     "importLoaders": 1,
                                     "sourceMap": true,
@@ -295,7 +291,7 @@
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\postcss-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\postcss-loader\\dist\\cjs.js",
                                 "options": {
                                     "postcssOptions": {
                                         "ident": "postcss",
@@ -323,12 +319,9 @@
                         "test": {},
                         "exclude": {},
                         "use": [
+                            "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\style-loader\\dist\\cjs.js",
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\mini-css-extract-plugin\\dist\\loader.js",
-                                "options": {}
-                            },
-                            {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\css-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\css-loader\\dist\\cjs.js",
                                 "options": {
                                     "importLoaders": 3,
                                     "sourceMap": true,
@@ -338,7 +331,7 @@
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\postcss-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\postcss-loader\\dist\\cjs.js",
                                 "options": {
                                     "postcssOptions": {
                                         "ident": "postcss",
@@ -361,14 +354,14 @@
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\resolve-url-loader\\index.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\resolve-url-loader\\index.js",
                                 "options": {
                                     "sourceMap": true,
-                                    "root": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\src"
+                                    "root": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\src"
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\sass-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\sass-loader\\dist\\cjs.js",
                                 "options": {
                                     "sourceMap": true
                                 }
@@ -379,12 +372,9 @@
                     {
                         "test": {},
                         "use": [
+                            "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\style-loader\\dist\\cjs.js",
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\mini-css-extract-plugin\\dist\\loader.js",
-                                "options": {}
-                            },
-                            {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\css-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\css-loader\\dist\\cjs.js",
                                 "options": {
                                     "importLoaders": 3,
                                     "sourceMap": true,
@@ -394,7 +384,7 @@
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\postcss-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\postcss-loader\\dist\\cjs.js",
                                 "options": {
                                     "postcssOptions": {
                                         "ident": "postcss",
@@ -417,14 +407,14 @@
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\resolve-url-loader\\index.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\resolve-url-loader\\index.js",
                                 "options": {
                                     "sourceMap": true,
-                                    "root": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\src"
+                                    "root": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\src"
                                 }
                             },
                             {
-                                "loader": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\sass-loader\\dist\\cjs.js",
+                                "loader": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\sass-loader\\dist\\cjs.js",
                                 "options": {
                                     "sourceMap": true
                                 }
@@ -447,9 +437,9 @@
     "plugins": [
         {
             "opts": {
-                "analyzerMode": "server",
+                "analyzerMode": "disabled",
                 "analyzerHost": "127.0.0.1",
-                "reportFilename": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\analyzer\\index.html",
+                "reportFilename": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\analyzer\\index.html",
                 "defaultSizes": "parsed",
                 "openAnalyzer": true,
                 "generateStatsFile": false,
@@ -489,59 +479,44 @@
         {
             "userOptions": {
                 "inject": true,
-                "template": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\public\\index.html",
-                "minify": {
-                    "removeComments": true,
-                    "collapseWhitespace": true,
-                    "removeRedundantAttributes": true,
-                    "useShortDoctype": true,
-                    "removeEmptyAttributes": true,
-                    "removeStyleLinkTypeAttributes": true,
-                    "keepClosingSlash": true,
-                    "minifyJS": true,
-                    "minifyCSS": true,
-                    "minifyURLs": true
-                }
+                "template": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\public\\index.html"
             },
             "version": 5
         },
         {
-            "tests": [
-                {}
-            ]
-        },
-        {
             "replacements": {
-                "NODE_ENV": "production",
+                "NODE_ENV": "development",
                 "PUBLIC_URL": "",
                 "FAST_REFRESH": true,
-                "REACT_APP_ENV": "production"
+                "REACT_APP_ENV": "development"
             }
         },
         {
-            "appPath": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp"
+            "appPath": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp"
         },
         {
             "definitions": {
                 "process.env": {
-                    "NODE_ENV": "\"production\"",
+                    "NODE_ENV": "\"development\"",
                     "PUBLIC_URL": "\"\"",
                     "FAST_REFRESH": "true",
-                    "REACT_APP_ENV": "\"production\""
+                    "REACT_APP_ENV": "\"development\""
                 }
             }
         },
         {
-            "_sortedModulesCache": {},
             "options": {
-                "filename": "static/css/[name].[contenthash:8].css",
-                "ignoreOrder": false,
-                "runtime": true,
-                "chunkFilename": "static/css/[name].[contenthash:8].chunk.css"
-            },
-            "runtimeOptions": {
-                "linkType": "text/css"
+                "overlay": false,
+                "exclude": {},
+                "include": {}
             }
+        },
+        {
+            "options": {},
+            "logger": {},
+            "pathCache": {},
+            "fsOperations": 0,
+            "primed": false
         },
         {
             "options": {
@@ -567,9 +542,9 @@
         },
         {
             "options": {
-                "async": false,
+                "async": true,
                 "typescript": {
-                    "typescriptPath": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\typescript\\lib\\typescript.js",
+                    "typescriptPath": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\typescript\\lib\\typescript.js",
                     "configOverwrite": {
                         "compilerOptions": {
                             "sourceMap": true,
@@ -578,10 +553,10 @@
                             "declarationMap": false,
                             "noEmit": true,
                             "incremental": true,
-                            "tsBuildInfoFile": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\.cache\\tsconfig.tsbuildinfo"
+                            "tsBuildInfoFile": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\.cache\\tsconfig.tsbuildinfo"
                         }
                     },
-                    "context": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp",
+                    "context": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp",
                     "diagnosticOptions": {
                         "syntactic": true
                     },
@@ -630,16 +605,16 @@
                 "emitWarning": true,
                 "failOnError": true,
                 "resourceQueryExclude": [],
-                "formatter": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\react-dev-utils\\eslintFormatter.js",
-                "eslintPath": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\eslint\\lib\\api.js",
-                "context": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\src",
+                "formatter": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\react-dev-utils\\eslintFormatter.js",
+                "eslintPath": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\eslint\\lib\\api.js",
+                "context": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\src",
                 "cache": true,
-                "cacheLocation": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\.cache\\.eslintcache",
-                "cwd": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp",
-                "resolvePluginsRelativeTo": "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\react-scripts\\config",
+                "cacheLocation": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\.cache\\.eslintcache",
+                "cwd": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp",
+                "resolvePluginsRelativeTo": "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\react-scripts\\config",
                 "baseConfig": {
                     "extends": [
-                        "D:\\Web-2023\\web2206\\advanced\\zhima-manager\\myapp\\node_modules\\eslint-config-react-app\\base.js"
+                        "D:\\Web-2023\\web2206\\advanced\\projects\\zhima-manager\\myapp\\node_modules\\eslint-config-react-app\\base.js"
                     ],
                     "rules": {}
                 },

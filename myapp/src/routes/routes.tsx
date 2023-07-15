@@ -22,7 +22,7 @@ import Video from "@/views/Library/Video";
 /* 模面二级页面 */
 import Company from '@/views/Interview/Company';
 import Album from '@/views/Interview/Album';
-// import AlbumDetail from '@/views/Interview/AlbumDetail';
+import AlbumDetail from '@/views/Interview/AlbumDetail';
 // const AlbumDetail = lazy(() => import('@/views/Interview/AlbumDetail'))
 
 import Option from '@/views/Interview/Option';
@@ -103,8 +103,8 @@ const routes = [
                     },
                     {
                         path: 'album/:aid',
-                        // element: <AlbumDetail />
-                        element: lazyLoad(() => import('@/views/Interview/AlbumDetail'))
+                        element: <AlbumDetail />
+                        // element: lazyLoad(() => import('@/views/Interview/AlbumDetail'))
                     },
                     {
                         path: 'option',

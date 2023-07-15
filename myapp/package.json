@@ -21,8 +21,13 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
+    "hard-source-webpack-plugin": "^0.13.1",
     "sass": "^1.63.3",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "terser-webpack-plugin": "^5.3.9",
+    "thread-loader": "^4.0.2",
     "webpack-bundle-analyzer": "^4.9.0",
     "webpackbar": "^5.0.2"
   },
