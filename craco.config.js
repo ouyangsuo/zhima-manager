@@ -14,9 +14,9 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const smp = new SpeedMeasurePlugin();
 
 const { addBeforeLoaders, loaderByName, getLoaders, removeLoaders } = require("@craco/craco");
-// const { addBeforeLoaders } = require("@craco/craco");
 
 const TerserPlugin = require('terser-webpack-plugin');
+
 
 module.exports = {
   devServer: {
@@ -42,16 +42,27 @@ module.exports = {
       }),
     ],
 
+
     alias: {
       "@": path.resolve(__dirname, "src"),
       "antd/es": path.resolve(__dirname, "node_modules/antd/es"),
     },
+
 
     /* 覆盖原有配置 完完全全就是操作对象和数组的方式去覆盖原来的配置 */
     configure: (webpackConfig, { env: webpackEnv, paths }) => {
       console.log("env=", env);
 
       /* ===== START ===== */
+
+      /* 打包目录名称 */
+      // const outputPath = path.resolve(__dirname, 'dist');
+      paths.appBuild = 'dist';
+      webpackConfig.output = {
+        ...webpackConfig.output,
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
+      }
 
       /* 开启多线程打包 */
       const rule = webpackConfig.module.rules.find((rule) => rule.oneOf);
@@ -79,7 +90,10 @@ module.exports = {
       )
 
       /* 生产环境移除 source-map-loader */
-      removeLoaders(webpackConfig, loaderByName("source-map-loader"));
+      // removeLoaders(webpackConfig, loaderByName("source-map-loader"));
+      if (env === "production") {
+        webpackConfig.devtool = false;
+      }
 
       /* 输出WP原始配置到文件中 */
       // console.log("webpackConfig=", webpackConfig);
@@ -90,39 +104,41 @@ module.exports = {
       // console.log("write webpackConfig out ok!!!");
 
       /* 分包配置 */
-      webpackConfig.optimization.splitChunks = {
-        ...webpackConfig.optimization.splitChunks,
-        cacheGroups: {
+      console.log("env", env);
+      if (env === "production") {
+        webpackConfig.optimization.splitChunks = {
+          ...webpackConfig.optimization.splitChunks,
+          cacheGroups: {
 
-          // 开发环境下不能使用all！！！坑！！！
-          chunks: env === 'development' ? "initial" : "all",
+            // 开发环境下不能使用all！！！坑！！！
+            // chunks: env === 'development' ? "initial" : "all",
+            reactVendor: {
+              test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|redux|react-redux)[\\/]/,
+              name: "react-vendors",
+              chunks: "all",
+              priority: 20,
+            },
 
-          reactVendor: {
-            test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|redux|react-redux)[\\/]/,
-            name: "react-vendors",
-            // chunks: "all",
-            priority: 20,
+            otherVendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: "other-vendors",
+              chunks: "all",
+              priority: 10,
+              reuseExistingChunk: true,
+              enforce: true,
+            },
+
+            /* 假设还有本地其它轮子 */
+            common: {
+              test: /[\\/]src[\\/]common[\\/]/,
+              name: "common",
+              chunks: "all",
+              priority: 10,
+            },
+
           },
-
-          otherVendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: "other-vendors",
-            // chunks: "all",
-            priority: 10,
-            reuseExistingChunk: true,
-            enforce: true,
-          },
-
-          /* 假设还有本地其它轮子 */
-          common: {
-            test: /[\\/]src[\\/]common[\\/]/,
-            name: "common",
-            // chunks: "all",
-            priority: 10,
-          },
-
-        },
-      };
+        };
+      }
 
       return webpackConfig;
     },
