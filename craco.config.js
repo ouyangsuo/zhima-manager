@@ -28,13 +28,13 @@ module.exports = {
 
     /* 新增配置 */
     plugins: [
-      new BundleAnalyzerPlugin({
-        analyzerMode: env !== "development" ? "server" : "disabled",
-        analyzerHost: "127.0.0.1",
-        analyzerPort: 8888,
-        openAnalyzer: true,
-        reportFilename: path.resolve(__dirname, `analyzer/index.html`),
-      }),
+      // new BundleAnalyzerPlugin({
+      //   analyzerMode: env !== "development" ? "server" : "disabled",
+      //   analyzerHost: "127.0.0.1",
+      //   analyzerPort: 8888,
+      //   openAnalyzer: true,
+      //   reportFilename: path.resolve(__dirname, `analyzer/index.html`),
+      // }),
 
       new WebpackBar({
         profile: true,
