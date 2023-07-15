@@ -112,7 +112,7 @@ const BaseLayout: React.FC = () => {
         <Layout>
             <Header className={style.header} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#002b80' }}>
                 <WindowsFilled className={style.logo} />
-                <span className={style.title}>LEKUZHIMA.CLUB 0225</span>
+                <span className={style.title}>LEKUZHIMA.CLUB 0226</span>
 
                 <div className={style.userInfo}>
                     <img className={style.avatar} src='https://lekuzhima.club/imgs/avatar.jpeg' />
