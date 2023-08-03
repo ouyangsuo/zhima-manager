@@ -6,6 +6,8 @@ import { ExclamationCircleFilled } from "@ant-design/icons";
 
 import { Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
+import { getAlbums } from "@/api/album";
+
 
 const { confirm } = Modal;
 
@@ -116,6 +118,7 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
+/* 25个模拟数据 */
 const _data: DataType[] = new Array(25).fill(null).map((_item, index) => ({
   id: index + 1,
   name: "滴滴八股文精选",
@@ -137,6 +140,7 @@ interface Values {
   description: string;
   modifier: string;
 }
+
 interface CollectionCreateFormProps {
   open: boolean;
   initialValues: any;
@@ -202,17 +206,20 @@ const App: React.FC = () => {
 
   useEffect(() => {
     // ok!
-    // getAlbums().then(
-    //   value => console.log("value=",value)
-    // )
+    getAlbums().then(
+      value => console.log("value=",value)
+    )
 
+    // 
     setData(_data);
+
+
     comSetData = setData;
   }, []);
 
-  useEffect(() => {
-    setPageData(data.slice(pageSize * (page - 1), pageSize * page));
-  }, [page]);
+  // useEffect(() => {
+  //   setPageData(data.slice(pageSize * (page - 1), pageSize * page));
+  // }, [page]);
 
   useEffect(() => {
     console.log("set new page data");
@@ -222,6 +229,7 @@ const App: React.FC = () => {
   /* 编辑相关 */
   const [open, setOpen] = useState(false);
   const [record, setRecord] = useState<DataType>(data[0]);
+
   const onCreate = (values: any) => {
     console.log("Received values of form: ", values);
     setOpen(false);
@@ -258,6 +266,7 @@ const App: React.FC = () => {
         pagination={{ position: [] }}
         dataSource={pageData}
       />
+
       <Pagination
         style={{ alignSelf: "flex-end" }}
         onChange={(page, pageSize) => {
