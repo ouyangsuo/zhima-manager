@@ -23,6 +23,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
+    "cross-env": "^7.0.3",
     "sass": "^1.63.3",
     "speed-measure-webpack-plugin": "^1.5.0",
     "terser-webpack-plugin": "^5.3.9",
@@ -32,8 +33,8 @@
   },
   "scripts": {
     "dev": "cross-env REACT_APP_ENV=development craco start",
-    "build:bak": "rimraf dist && cross-env REACT_APP_ENV=production craco build && echo '构建完成！！！'",
-    "build": "rimraf dist && craco build && echo '构建完成！！！'",
+    "build": "rimraf dist && cross-env REACT_APP_ENV=production craco build && echo '构建完成！！！'",
+    "build:bak": "rimraf dist && craco build && echo '构建完成！！！'",
     "test": "cross-env REACT_APP_ENV=test craco build",
     "gpush": "git add . && git commit -m temp && git push -u origin master && git push -u github master"
   },
