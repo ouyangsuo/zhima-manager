@@ -32,7 +32,7 @@
   },
   "scripts": {
     "dev": "cross-env REACT_APP_ENV=development craco start",
-    "build": "rimraf dist && cross-env REACT_APP_ENV=production craco build &",
+    "build": "rimraf dist && cross-env REACT_APP_ENV=production craco build && echo '构建完成！！！'",
     "test": "cross-env REACT_APP_ENV=test craco build",
     "gpush": "git add . && git commit -m temp && git push -u origin master && git push -u github master"
   },
